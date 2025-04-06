@@ -45,5 +45,16 @@ public class Calculator {
         displayPanel.setLayout(new BorderLayout());
         displayPanel.add(displayLabel);
         frame.add(displayPanel, BorderLayout.NORTH);
+
+        buttonsPanel.setLayout(new GridLayout(5,4));
+        buttonsPanel.setBackground(customBlack);
+        frame.add(buttonsPanel);
+
+        for (String value : buttonValues) {
+            JButton button = new JButton();
+            button.setFont(new Font("Arial", Font.PLAIN, 30));
+            button.setText(value);
+            buttonsPanel.add(button);
+        }
     }
 }
