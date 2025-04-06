@@ -14,6 +14,8 @@ public class Calculator {
     Color customOrange = new Color(255,149,0);
 
     JFrame frame = new JFrame("Calculator");
+    JLabel displayLabel = new JLabel();
+    JPanel displayPanel = new JPanel();
 
     Calculator(){
         frame.setVisible(true);
@@ -21,5 +23,16 @@ public class Calculator {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
+
+        displayLabel.setBackground(customBlack);
+        displayLabel.setForeground(Color.white);
+        displayLabel.setFont(new Font("Arial",Font.PLAIN, 80));
+        displayLabel.setHorizontalAlignment(JLabel.RIGHT);
+        displayLabel.setText("0");
+        displayLabel.setOpaque(true);
+
+        displayPanel.setLayout(new BorderLayout());
+        displayPanel.add(displayLabel);
+        frame.add(displayPanel, BorderLayout.NORTH);
     }
 }
